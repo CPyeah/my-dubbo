@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * create by CP on 2020/4/16 0016.
  */
-@Service(interfaceClass = UserService.class)
+@Service(interfaceClass = UserService.class, cluster = "failfast", timeout = 300, retries = 1, loadbalance = "", actives = 5)
 public class UserServiceImpl implements UserService {
     @Override
     public List<User> getUsers() {

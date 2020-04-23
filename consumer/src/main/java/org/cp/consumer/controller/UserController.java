@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserController {
 
-    @Reference(loadbalance = "random", timeout = 300, check = false)
+    @Reference(cluster = "failover", loadbalance = "random", timeout = 300, check = false)
     UserService service;
 
     @GetMapping("getuserbyid")
