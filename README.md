@@ -174,6 +174,40 @@ http://localhost:7000/getuserbyid?id=1
 
 16、Dubbo的Provider的失效踢出原理。
 
+    基于zookeeper的临时节点原理。
+    
+17、Dubbo的控制台能做些什么？
+
+    通过dubbo中的源码，打包成war/jar包，部署在自己的服务器上。
+    1、路由规则
+    2、动态配置
+    3、服务降级
+    4、访问控制
+    5、权重调整
+    6、负载均衡
+
+18、同一个接口有不同的实现类怎么区分？
+
+    可以使用分组属性
+    @Service(interfaceClass = UserService.class,group = "")
+    相同组的consumer和provider相互调用
+    
+19、服务上线怎么兼容新旧版本？
+
+    可以使用version属性
+    @Service(interfaceClass = UserService.class,version = "")
+    相同版本的相互调用，和group类似
+    
+20、Dubbo和Dubbox的异同点？
+
+    Dubbox是Dubbo的拓展版本，当当网在原来的基础上添加了Rest调用，一些组件。
+    
+21、出现调用超时com.alibaba.dubbo.remoting.TimeoutException异常怎么办？
+
+    业务处理太慢，造成调用超时。
+    1、优化业务代码，提高provider响应速度。
+    2、增长超时时间
+
     
      
 
